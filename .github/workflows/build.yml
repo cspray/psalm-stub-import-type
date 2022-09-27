@@ -1,0 +1,30 @@
+name: 'Psalm Static Analysis'
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  psalm-with-stubs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Composer
+        uses: php-actions/composer@v6
+      - name: Static Analysis
+        run: "vendor/bin/psalm"
+
+  psalm-without-stubs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Composer
+        uses: php-actions/composer@v6
+      - name: Static Analysis
+        run: "vendor/bin/psalm --config=psalm-without-stubs.xml"

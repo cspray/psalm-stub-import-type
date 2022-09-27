@@ -1,0 +1,18 @@
+{
+  "name": "cspray/psalm-stub-import-type",
+  "description": "A proof of concept to show that psalm-import-type is not recognized in stubs",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Cspray\\PsalmStubImportType\\": "src"
+    }
+  },
+  "require": {
+    "php": "^8.1",
+    "laminas/laminas-servicemanager": "^3.17",
+    "psr/container": "^1.1"
+  },
+  "require-dev": {
+    "vimeo/psalm": "^4.27"
+  }
+}
